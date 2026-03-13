@@ -9,14 +9,14 @@ class Point:
         :param x: coordinate of point
         :param y: cooridnate of point
         """
-        self.x_coordinate = x #x is a class attribute
-        self.y_coordinate = y
+        self.x = x #x is a class attribute
+        self.y = y
     def __str__(self):
         """
         String representation of Point class
         :return: string representation of Point class
         """
-        return f"P<{self.x_coordinate},{self.y_coordinate}>"
+        return f"P<{self.x},{self.y}>"
     def __repr__(self):
         return self.__str__()
     def distance_origin(self):
@@ -24,15 +24,15 @@ class Point:
         Calculate the distance between point and origin
         :return: float, distance between point and origin
         """
-        return (self.x_coordinate ** 2 + self.y_coordinate ** 2) ** 0.5
+        return (self.x ** 2 + self.y ** 2) ** 0.5
     def distance_to(self, point):
         """
         Calculate the distance between current point and another point
         :param point: the other point to calculate the distance to
         :return: float, distance between current point and another point
         """
-        return((self.x_coordinate - point.x_coordinate) ** 2 +
-               (self.y_coordinate - point.y_coordinate) ** 2) ** 0.5
+        return((self.x- point.x) ** 2 +
+               (self.y - point.y) ** 2) ** 0.5
     def __lt__(self, other):
         """
         Returns True if self is less than the other point
@@ -45,9 +45,9 @@ if __name__== "__main__":
     p1 = Point(1,2)
     p2 = Point(3,4)
     #p3 = Point("Bob", [1,2,3])
-    print(p1.x_coordinate, p1.y_coordinate)
-    print(p2.x_coordinate, p2.y_coordinate)
-    #print(p3.x_coordinate, p3.y_coordinate)
+    print(p1.x, p1.y)
+    print(p2.x, p2.y)
+    #print(p3.x, p3.y)
 
     print(p1, p2)
     print(f"{p2} distance to origin is {p2.distance_origin()}")
